@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hyprion - Tree Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-image:url("https://th.bing.com/th/id/OSK.HEROOoAQX18MK6u4wOaTqgxrhSnbq8k0I1184r3_DefDneE?rs=1&pid=ImgDetMain");
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+        h3 {
+            color: #4CAF50; /* Green color for the title */
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        select, input[type="text"], input[type="date"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50; /* Green background for buttons */
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 48%;
+            margin: 10px 1%;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+        .reset {
+            background-color: #f44336; /* Red background for reset */
+        }
+        .reset:hover {
+            background-color: #e53935; /* Darker red on hover */
+        }
+        a {
+            color: #2196F3; /* Blue color for links */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="container">
+        <form autocomplete="off" method="post" name="google-sheet">
+            <h1>Science Exibition-Project Smart Bin Smart India Feedback Form</h1>
+    <input type="text" placeholder="Type Your Name" name="Location" required> 
+            <select name="Satisfaction">
+                <option value="NotSelected">Satisfaction</option>
+                <option value="Very good">Very good</option>
+                <option value="Good">Good</option>
+                <option value="Neutral">Neutral</option>
+                <option value="Bad">Bad</option>
+                <option value="Very Bad">Very Bad</option>
+            </select>
+      
+ 
+            <textarea rows="2" placeholder="Any suggestions?" name="Message"></textarea>
+            <button type="submit" name="submit">Send</button>
+            <button type="reset" class="reset">Reset</button>
+        </form>
+    </div><center>
+    
+    </center>
+<h3 style ="background-color: aquamarine;">
+
+
+    <script>
+        const scriptURL = "https://script.google.com/macros/s/AKfycbyppW1376B7qrTlGN9vxXafgmgciujnKs1kSRfRuNf3Um7CgA_43h_h6_DTRqXF8GHpvQ/exec";
+        const form = document.forms['google-sheet'];
+      
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors'})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message));
+        });
+    </script>
+</body>
+</html>
+
